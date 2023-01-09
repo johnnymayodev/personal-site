@@ -12,13 +12,11 @@ const combinations = [
 let prev = 0;
 
 setInterval(() => {
-
-    // const index = pickIndex(prev);
-    // prev = index;
-
-    let index = prev + 1;
-    const combination = combinations[index];
+    
+    const index = pickIndex(prev);
     prev = index;
+
+    const combination = combinations[index];
 
 	wrapper.dataset.configuration = combination.configuration.toString();
 	wrapper.dataset.roundness = combination.roundness.toString();
