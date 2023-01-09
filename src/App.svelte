@@ -13,11 +13,7 @@
 	<div>
 		<h1>Hello</h1>
 
-		<a
-			id="source-link"
-			class="meta-link"
-			href="https://karinasirqueira.com"
-		>
+		<a id="source-link" class="meta-link" href="https://karinasirqueira.com">
 			<i class="fa-solid fa-link" />
 			<span>Source</span>
 		</a>
