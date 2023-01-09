@@ -3,13 +3,13 @@
 </script>
 
 <main>
-	<!-- link to font awesome 4.7 -->
 	<link
 		rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
 	/>
 
 	<Glyph />
+
 	<div>
 		<h1>Hello</h1>
 
