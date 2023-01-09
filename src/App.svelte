@@ -4,7 +4,14 @@
 
 <main>
 
-  <h1>Vite + Svelte</h1>
+  <div id='wrapper' data-configuration='1' data-roundness='1'>
+    <div class='blob'></div>
+    <div class='blob'></div>
+    <div class='blob'></div>
+    <div class='blob'></div>
+    <div class='blob'></div>
+    <div class='blob'></div>
+    <div class='blob'></div>
+  </div>
 
-  <Counter />
 </main>
