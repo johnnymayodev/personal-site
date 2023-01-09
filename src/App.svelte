@@ -1,17 +1,7 @@
 <script>
-  import Counter from './lib/Counter.svelte'
+  import Glyph from "./lib/Glyph.svelte";
 </script>
 
 <main>
-
-  <div id='wrapper' data-configuration='1' data-roundness='1'>
-    <div class='blob'></div>
-    <div class='blob'></div>
-    <div class='blob'></div>
-    <div class='blob'></div>
-    <div class='blob'></div>
-    <div class='blob'></div>
-    <div class='blob'></div>
-  </div>
-
+  <Glyph />
 </main>
