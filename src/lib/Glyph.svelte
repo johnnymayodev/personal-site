@@ -1,5 +1,3 @@
-
-
 <main>
 	<div id="wrapper" data-configuration="1" data-roundness="1">
 		<div class="blob" />
@@ -11,19 +9,15 @@
 		<div class="blob" />
 	</div>
 
-
-    <script src="/src/lib/logic.js"></script>
+	<script src="/src/lib/logic.js"></script>
 	<link rel="stylesheet" href="/src/lib/wrapper.css" />
 </main>
 
 <style>
 	main {
-		height: 100vh;
-		width: 100vw;
+		z-index: -1;
 
-		display: grid;
-		place-items: center;
-		margin: 0;
+		width: fit-content;
 
 		overflow: hidden;
 	}
@@ -37,8 +31,10 @@
 	}
 
 	#wrapper > .blob {
-		height: 30%;
-		width: 30%;
+		height: 0;
+		width: 0;
+
+        border-radius: 6rem;
 
 		background-color: white;
 
@@ -84,5 +80,57 @@
 	#wrapper > .blob:nth-child(7) {
 		z-index: 2;
 		background-color: #dadada;
+	}
+
+	/* default positioning */
+	/* wrapper positioning [[[CONFIG 1]]] */
+
+	#wrapper > .blob:nth-child(1) {
+		left: 0;
+		top: 0;
+		height: 50%;
+		width: 20%;
+	}
+
+	#wrapper > .blob:nth-child(2) {
+		left: 20%;
+		top: 0;
+		height: 50%;
+		width: 30%;
+	}
+
+	#wrapper > .blob:nth-child(3) {
+		left: 50%;
+		top: 0;
+		height: 100%;
+		width: 50%;
+	}
+
+	#wrapper > .blob:nth-child(4) {
+		left: 0;
+		top: 50%;
+		height: 50%;
+		width: 30%;
+	}
+
+	#wrapper > .blob:nth-child(5) {
+		left: 30%;
+		top: 50%;
+		height: 50%;
+		width: 20%;
+	}
+
+	#wrapper > .blob:nth-child(6) {
+		left: 70%;
+		top: 50%;
+		height: 50%;
+		width: 30%;
+	}
+
+	#wrapper > .blob:nth-child(7) {
+		left: 25%;
+		top: 20%;
+		height: 80%;
+		width: 15%;
 	}
 </style>
