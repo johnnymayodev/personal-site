@@ -13,7 +13,7 @@ let prev = 0;
 
 setInterval(() => {
 
-    const index = pickIndex(0, combinations.length - 1, prev);
+    const index = pickIndex(prev);
     prev = index;
 
     const combination = combinations[index];
@@ -23,9 +23,14 @@ setInterval(() => {
 	wrapper.dataset.roundness = combination.roundness.toString();
 }, 3000);
 
-function pickIndex(min, max, prev=1) {
+function pickIndex(prev=0, min=0, max=combinations.length-1) {
+    console.log(min, max, prev);
     const index = Math.floor(Math.random() * (max - min + 1)) + min;
     if (index === prev) {
+        return pickIndex(min, max, prev);
+    } else if (combinations[index]['configuration'] === combinations[prev]['configuration']) {
+        return pickIndex(min, max, prev);
+    } else if (combinations[index]['roundness'] === combinations[prev]['roundness']) {
         return pickIndex(min, max, prev);
     }
     return index;
