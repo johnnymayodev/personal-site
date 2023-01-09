@@ -37,10 +37,6 @@
 		color: white;
 	}
 
-	body.menu-toggled > .meta-link > span {
-		color: rgb(30, 30, 30);
-	}
-
 	#source-link {
 		bottom: 60px;
 	}
