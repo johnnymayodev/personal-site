@@ -1,39 +1,39 @@
-const trailer = document.getElementById("trailer");
-
-const mouseVelocity = {
-    x: 0,
-    y: 0,
-    prevX: 0,
-    prevY: 0,
-    update: function (x, y) {
-        this.prevX = this.x;
-        this.prevY = this.y;
-        this.x = x;
-        this.y = y;
-    },
-    getVelocity: function () {
-        return Math.sqrt(Math.pow(this.x - this.prevX, 2) + Math.pow(this.y - this.prevY, 2));
-    },
-};
 
 
-const animateTrailer = (e) => {
-	const x = e.clientX - trailer.offsetWidth / 2,
-		y = e.clientY - trailer.offsetHeight / 2;
+importScript("trailer");
+importScript("grid")
 
-	const keyframes = {
-		transform: `translate(${x}px, ${y}px) scale(${mouseVelocity.getVelocity() / 20 + 1})`,
-	};
+function importScript(script) {
+	var imported = document.createElement("script");
+	imported.src = `/scripts/${script}.js`;
+	document.head.appendChild(imported);
+}
 
-	trailer.animate(keyframes, {
-		duration: 800,
-		fill: "forwards",
-	});
-};
+function importStyle(style) {
+    var imported = document.createElement("link");
+    imported.href = `/styles/${style}.css`;
+    imported.rel = "stylesheet";
+    document.head.appendChild(imported);
+}
 
+function importHTML(html) {
+    var imported = document.createElement("link");
+    imported.href = `/html/${html}.html`;
+    imported.rel = "import";
+    document.head.appendChild(imported);
+}
 
-window.onmousemove = (e) => {
-    mouseVelocity.update(e.clientX, e.clientY);
+function importComponent(component) {
+    importHTML(component);
+    importStyle(component);
+    importScript(component);
+}
 
-	animateTrailer(e, mouseVelocity);
-};
+function checkIfFileExists(file) {
+    var http = new XMLHttpRequest();
+    http.open('HEAD', file, false);
+    http.send();
+    return http.status != 404;
+}
+
+console.log(checkIfFileExists("/scripts/trailer.js"));
