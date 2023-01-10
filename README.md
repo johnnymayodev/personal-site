@@ -1,1 +1,0 @@
-Made with Svelte + Vite
