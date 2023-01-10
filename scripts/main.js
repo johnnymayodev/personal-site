@@ -1,7 +1,7 @@
 
 
 importScript("trailer");
-importScript("grid")
+importScript("grid");
 
 function importScript(script) {
 	var imported = document.createElement("script");
