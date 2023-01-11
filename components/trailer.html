@@ -14,12 +14,7 @@
 		z-index: 100;
 
 		pointer-events: none;
-		/* opacity: 0; */
-		transition: opacity 500ms ease;
-	}
-
-	body:hover > #trailer {
-		opacity: 1;
+		opacity: 0;
 	}
 </style>
 
@@ -51,6 +46,7 @@
 
 		const keyframes = {
 			transform: `translate(${x}px, ${y}px) scale(${mouseVelocity.getVelocity() / 15 + 1})`,
+			opacity: 1,
 		};
 
 		trailer.animate(keyframes, {
