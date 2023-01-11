@@ -1,13 +1,16 @@
+:root {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: white;
+	background-color: black;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-body {
-	width: 100vw;
-	height: 100vh;
-
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-color: black;
+#app, body {
+	width: fit-content;
+	height: fit-content;
 }
