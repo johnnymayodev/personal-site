@@ -20,6 +20,7 @@ function importComponent(component) {
     document.body.appendChild(component);
 }
 importComponent("trailer");
+importComponent("header");
 
 function createApp() {
 
