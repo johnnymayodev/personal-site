@@ -15,11 +15,12 @@ function importComponent(component) {
     var component = document.createElement("div");
     component.id = componentName + "-component";
     $ (function() {
-        $(`#${componentName}`).load(`/components/${componentName}.html`);
+        $(`#${componentName}-component`).load(`/components/${componentName}.html`);
     })
     document.body.appendChild(component);
 }
-importComponent("trailer");
+// importComponent("trailer");
+importComponent("themePicker");
 
 function createApp() {
 
