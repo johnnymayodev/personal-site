@@ -13,7 +13,7 @@ function importComponent(component) {
     // ----- jquery method ----- (requires jquery to be imported in index.html)
     const componentName = component;
     var component = document.createElement("div");
-    component.id = componentName;
+    component.id = componentName + "-component";
     $ (function() {
         $(`#${componentName}`).load(`/components/${componentName}.html`);
     })
