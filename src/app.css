@@ -1,0 +1,10 @@
+#main {
+    background-color: #fff;
+    color: black;
+    margin: 0 auto;
+
+    width: fit-content;
+
+    display: grid;
+    align-content: center;
+}
