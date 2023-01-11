@@ -1,10 +1,20 @@
-#main {
-    background-color: #fff;
-    color: black;
-    margin: 0 auto;
-
-    width: fit-content;
+#container {
+    width: 100vw;
+    height: 100vh;
 
     display: grid;
+    justify-content: center;
     align-content: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.5;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
 }
