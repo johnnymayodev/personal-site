@@ -19,8 +19,7 @@ function importComponent(component) {
     })
     document.body.appendChild(component);
 }
-// importComponent("trailer");
-importComponent("clock")
+importComponent("trailer");
 
 function createApp() {
 
