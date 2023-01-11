@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<div id="tiles"></div>
+<div id="tiles-background">
+	<div id="tiles"></div>
+</div>
 <script src="/node_modules/animejs/lib/anime.min.js"></script>
 
 <style>
 	:root {
-		--g1: rgb(98, 0, 234);
-		--g2: rgb(236, 64, 122);
+		--g1: rgb(44, 83, 147);
+		--g2: rgb(85, 43, 137);
 	}
 
 	@keyframes background-pan {
@@ -18,13 +20,19 @@
 		}
 	}
 
-	body {
+	#tiles-background {
 		animation: background-pan 10s linear infinite;
 		background: linear-gradient(to right, var(--g1), var(--g2), var(--g1));
 		background-size: 200%;
 		height: 100vh;
 		overflow: hidden;
 		margin: 0px;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: -100;
 	}
 
 	#tiles {
@@ -65,7 +73,7 @@
 	const toggle = () => {
 		toggled = !toggled;
 
-		document.body.classList.toggle("toggled");
+		document.getElementById("tiles-background").classList.toggle("toggled");
 	};
 
 	const handleOnClick = (index) => {
@@ -102,10 +110,10 @@
 	const createGrid = () => {
 		wrapper.innerHTML = "";
 
-		const size = document.body.clientWidth > 800 ? 100 : 50;
+		const size = document.getElementById("tiles-background").clientWidth > 800 ? 100 : 50;
 
-		columns = Math.floor(document.body.clientWidth / size);
-		rows = Math.floor(document.body.clientHeight / size);
+		columns = Math.floor(document.getElementById("tiles-background").clientWidth / size);
+		rows = Math.floor(document.getElementById("tiles-background").clientHeight / size);
 
 		wrapper.style.setProperty("--columns", columns);
 		wrapper.style.setProperty("--rows", rows);
