@@ -1,4 +1,6 @@
 node_modules
 package-lock.json
 package.json
-```
+.DS_Store
+fontawesome-free-6.2.1
+favicon.ico
