@@ -1,6 +1,3 @@
-importComponent("trailer");
-importComponent("grid");
-
 function importComponent(component) {
 
     if (!checkIfFileExists(`/components/${component}.html`)) {
@@ -22,18 +19,21 @@ function importComponent(component) {
     })
     document.body.appendChild(component);
 }
+importComponent("trailer");
+// importComponent("grid");
 
-function importScript(script) {
+function createApp() {
 
-    if (!checkIfFileExists(`/scripts/${script}.js`)) {
-        console.log(`Script ${script} does not exist`);
-        return;
-    }
+    const app = document.createElement("div");
+    app.id = "app";
 
-    var script = document.createElement("script");
-    script.src = `/scripts/${script}.js`;
-    document.body.appendChild(script);
+    $ (function() {
+        $(`#app`).load(`/src/App.html`);
+    })
+
+    document.body.appendChild(app);
 }
+createApp();
 
 function checkIfFileExists(file) {
     try {
