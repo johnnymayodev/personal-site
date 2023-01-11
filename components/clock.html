@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<script src="/node_modules/animejs/lib/anime.min.js"></script>
+<span id="clock">0:00:00</span>
+
+<style>
+	#clock {
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding: 1rem;
+		/* background-color: #f44; */
+		z-index: 99;
+		font-size: 1.5rem;
+		color: #fff;
+		cursor: pointer;
+
+        opacity: 0.2;
+	}
+</style>
+
+<script>
+	// get the clock element
+	const clock = document.getElementById("clock");
+
+	// create a function to update the clock
+	function updateClock() {
+		// get the current time
+		const now = new Date();
+
+		// get the hours, minutes, and seconds
+		const hours = now.getHours();
+		const minutes = now.getMinutes();
+		const seconds = now.getSeconds();
+
+		// format the hours, minutes, and seconds
+        const formattedHours = hours > 12 ? hours - 12 : hours;
+		const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+		const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+		// update the clock element
+		// clock.innerHTML = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        // fade each change in the clock
+
+        // use anime to fade the clock at each update
+        anime ({
+            targets: clock,
+            opacity: 0,
+            duration: 250,
+            easing: 'linear',
+            complete: function(anim) {
+                clock.innerHTML = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+                anime ({
+                    targets: clock,
+                    opacity: 0.2,
+                    duration: 250,
+                    easing: 'linear'
+                });
+            }
+        });
+
+	}
+
+	// update the clock every second
+	setInterval(updateClock, 1000);
+</script>
