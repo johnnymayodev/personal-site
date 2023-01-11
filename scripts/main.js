@@ -20,7 +20,7 @@ function importComponent(component) {
     document.body.appendChild(component);
 }
 // importComponent("trailer");
-importComponent("themePicker");
+importComponent("clock")
 
 function createApp() {
 
